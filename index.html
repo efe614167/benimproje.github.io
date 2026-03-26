@@ -1,34 +1,175 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Rabia ❤️</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Küçük Bir Şey</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Ortak container */
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+/* Input */
+input {
+    padding: 12px;
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: black;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Gizleme */
+.hidden {
+    display: none;
+}
+
+/* Slider */
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.caption {
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Butonlar */
+.nav {
+    margin-top: 10px;
+}
+
+.nav button {
+    background: #ddd;
+    color: black;
+}
+</style>
 </head>
+
 <body>
 
-<div id="countdown">
-    <h1>Hazır mısın Rabia? 💫</h1>
-    <div id="timer">3</div>
+<!-- GİRİŞ -->
+<div class="container" id="login">
+    <h2>Küçük bir şey hazırladım 🙂</h2>
+    <p>Ama önce bir şeyi doğrulamam lazım</p>
+
+    <input type="date" id="bday">
+    <br>
+    <button onclick="check()">Devam</button>
+
+    <p id="error" style="color:red;"></p>
 </div>
 
-<div class="main hidden" id="mainContent">
-    <h1 class="neon">Rabia ❤️</h1>
-    <p class="subtitle">Dünyanın en güzel Wegh fanına...</p>
-    <button onclick="startSurprise()">Sürprizi Başlat 🎁</button>
+<!-- ANA -->
+<div class="container hidden" id="main">
+    <h2>Tamam, doğru kişi 🙂</h2>
+    <button onclick="start()">Göster</button>
 </div>
 
-<div class="message hidden" id="message">
-    <h2>💌 Sana Bir Mesajım Var</h2>
-    <p class="lyrics">Belki de en güzel şarkı sensin...</p>
-    <p>
-        Seninle bir gün konserinde omuz omuza durmak istiyorum.
-        Kalabalığın içinde sadece seni görmek...
-    </p>
+<!-- GALERİ -->
+<div class="container hidden" id="gallery">
+
+    <div class="slider">
+        <div class="slide active">
+            <img src="foto1.jpg" alt="">
+            <div class="caption">Bunu seçmem gerekiyordu</div>
+        </div>
+
+        <div class="slide">
+            <img src="foto2.jpg" alt="">
+            <div class="caption">Bu da baya iyi</div>
+        </div>
+
+        <div class="slide">
+            <img src="foto3.jpg" alt="">
+            <div class="caption">Bu da favorilerden biri</div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <button onclick="prev()">←</button>
+        <button onclick="next()">→</button>
+    </div>
+
+    <p style="margin-top:20px;">Neyse, sadece paylaşmak istedim 🙂</p>
 </div>
 
-<audio id="music" src="music.mp3"></audio>
+<script>
+function check() {
+    const input = document.getElementById("bday").value;
 
-<script src="script.js"></script>
+    // Doğru tarih: 8 Eylül 2008
+    if (input === "2008-09-08") {
+        document.getElementById("login").classList.add("hidden");
+        document.getElementById("main").classList.remove("hidden");
+    } else {
+        document.getElementById("error").innerText = "Hmm... Bu sen değilsin gibi 🤨";
+    }
+}
+
+function start() {
+    document.getElementById("main").classList.add("hidden");
+    document.getElementById("gallery").classList.remove("hidden");
+}
+
+let current = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[index].classList.add("active");
+}
+
+function next() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+}
+
+function prev() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+}
+</script>
+
 </body>
 </html>
