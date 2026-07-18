@@ -121,16 +121,6 @@ height:260px;
 
 <p>09 Temmuz'dan beri birlikte 💖</p>
 
-<input
-type="file"
-id="upload"
-multiple
-accept=".jpg,.jpeg,.png,image/*"
-hidden>
-
-<button onclick="document.getElementById('upload').click()">
-📷 Fotoğrafları Seç
-</button>
 
 </header>
 
@@ -143,43 +133,34 @@ Her fotoğraf bizim hikâyemizin bir parçası... ❤️
 </footer>
 
 <script>
+const gallery = document.getElementById("gallery");
 
-const upload=document.getElementById("upload");
-const gallery=document.getElementById("gallery");
+// Kaç fotoğraf varsa burayı değiştir
+const totalPhotos = 20;
 
-upload.addEventListener("change",()=>{
+for (let i = 1; i <= totalPhotos; i++) {
 
-gallery.innerHTML="";
+    const box = document.createElement("div");
+    box.className = "photo";
 
-const files=[...upload.files];
+    const img = document.createElement("img");
 
-files.forEach(file=>{
+    // Fotoğraflar pages klasöründen okunacak
+    img.src = `pages/${i}.jpeg`;
 
-if(!file.type.startsWith("image/")) return;
+    img.alt = `Fotoğraf ${i}`;
 
-const reader=new FileReader();
+    // Eğer jpeg yoksa jpg dene
+    img.onerror = function () {
+        img.onerror = function () {
+            box.remove();
+        };
+        img.src = `pages/${i}.jpg`;
+    };
 
-reader.onload=e=>{
-
-const box=document.createElement("div");
-box.className="photo";
-
-const img=document.createElement("img");
-img.src=e.target.result;
-
-box.appendChild(img);
-
-gallery.appendChild(box);
-
+    box.appendChild(img);
+    gallery.appendChild(box);
 }
-
-reader.readAsDataURL(file);
-
-});
-
-});
-
 </script>
-
 </body>
 </html>
