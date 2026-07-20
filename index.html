@@ -3,164 +3,458 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Nisa ❤️ Efe</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+font-family:'Arial',sans-serif;
 }
 
 body{
-background:linear-gradient(180deg,#111,#000);
-color:#fff;
+
+background:
+radial-gradient(circle at top,#3b0a18,#000);
+
+color:white;
 text-align:center;
 min-height:100vh;
+overflow-x:hidden;
+
 }
+
+
+/* Kalpler */
+
+.heart{
+
+position:fixed;
+color:#ff4d6d;
+font-size:20px;
+animation:fall linear infinite;
+opacity:.8;
+
+}
+
+
+@keyframes fall{
+
+0%{
+transform:translateY(-10vh) rotate(0deg);
+}
+
+100%{
+transform:translateY(110vh) rotate(360deg);
+}
+
+}
+
+
+
 
 header{
-padding:40px 20px;
+
+padding:50px 20px;
+
 }
+
 
 h1{
-font-size:45px;
-margin-bottom:10px;
+
+font-size:48px;
+
+animation:glow 2s infinite alternate;
+
 }
 
-p{
-opacity:.8;
-margin-bottom:20px;
-}
 
-button{
-padding:15px 30px;
-border:none;
-border-radius:50px;
-background:#ff4d6d;
-color:white;
-font-size:18px;
-cursor:pointer;
-transition:.3s;
-}
-
-button:hover{
-transform:scale(1.05);
-background:#ff2f56;
-}
-
-#gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:20px;
-padding:30px;
-max-width:1300px;
-margin:auto;
-}
-
-.photo{
-overflow:hidden;
-border-radius:18px;
-background:#222;
-box-shadow:0 8px 25px rgba(0,0,0,.4);
-animation:fade .7s;
-}
-
-.photo img{
-width:100%;
-height:340px;
-object-fit:cover;
-transition:.5s;
-display:block;
-}
-
-.photo:hover img{
-transform:scale(1.08);
-}
-
-footer{
-padding:40px;
-opacity:.7;
-}
-
-@keyframes fade{
+@keyframes glow{
 
 from{
-opacity:0;
-transform:translateY(20px);
+text-shadow:0 0 10px #ff4d6d;
 }
 
 to{
-opacity:1;
-transform:translateY(0);
+text-shadow:0 0 30px #ffb3c1;
 }
 
 }
+
+
+
+p{
+
+margin-top:15px;
+font-size:18px;
+opacity:.8;
+
+}
+
+
+
+
+/* Sayaç */
+
+#counter{
+
+margin:30px auto;
+
+max-width:600px;
+
+padding:20px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(10px);
+
+font-size:25px;
+
+color:#ffb3c1;
+
+box-shadow:
+0 0 30px rgba(255,77,109,.3);
+
+}
+
+
+
+
+#gallery{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(230px,1fr));
+
+gap:25px;
+
+padding:30px;
+
+max-width:1300px;
+
+margin:auto;
+
+}
+
+
+
+.photo{
+
+overflow:hidden;
+
+border-radius:25px;
+
+background:#222;
+
+box-shadow:
+0 10px 30px rgba(255,0,80,.2);
+
+animation:show 1s;
+
+}
+
+
+
+.photo img{
+
+width:100%;
+
+height:340px;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+
+
+.photo:hover img{
+
+transform:scale(1.1);
+
+filter:brightness(1.1);
+
+}
+
+
+
+@keyframes show{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+
+footer{
+
+padding:50px;
+
+font-size:18px;
+
+color:#ffb3c1;
+
+}
+
+
+
 
 @media(max-width:700px){
 
 h1{
+
 font-size:32px;
+
+}
+
+
+#counter{
+
+font-size:18px;
+
 }
 
 .photo img{
+
 height:260px;
+
 }
 
 }
+
+
+
 </style>
 
 </head>
 
+
+
 <body>
+
 
 <header>
 
-<h1>❤️ Nisa & Efe ❤️</h1>
+<h1>
+❤️ Nisa & Efe ❤️
+</h1>
 
-<p>09 Temmuz'dan beri birlikte 💖</p>
+
+<p>
+09 Temmuz 2026'dan beri birlikte 💖
+</p>
+
+
+<div id="counter">
+
+Başlıyoruz... ❤️
+
+</div>
 
 
 </header>
 
+
+
+
 <div id="gallery"></div>
+
+
 
 <footer>
 
-Her fotoğraf bizim hikâyemizin bir parçası... ❤️
+"Her saniye yeni bir anı, her anı bizim hikâyemiz..." ❤️
 
 </footer>
 
+
+
+
 <script>
-const gallery = document.getElementById("gallery");
 
-// Kaç fotoğraf varsa burayı değiştir
-const totalPhotos = 20;
 
-for (let i = 1; i <= totalPhotos; i++) {
+// FOTOĞRAF GALERİSİ
 
-    const box = document.createElement("div");
-    box.className = "photo";
 
-    const img = document.createElement("img");
+const gallery=document.getElementById("gallery");
 
-    // Fotoğraflar pages klasöründen okunacak
-    img.src = `pages/${i}.jpeg`;
 
-    img.alt = `Fotoğraf ${i}`;
+const totalPhotos=20;
 
-    // Eğer jpeg yoksa jpg dene
-    img.onerror = function () {
-        img.onerror = function () {
-            box.remove();
-        };
-        img.src = `pages/${i}.jpg`;
-    };
 
-    box.appendChild(img);
-    gallery.appendChild(box);
+
+for(let i=1;i<=totalPhotos;i++){
+
+
+let box=document.createElement("div");
+
+box.className="photo";
+
+
+let img=document.createElement("img");
+
+
+img.src=`pages/${i}.jpeg`;
+
+img.alt=`Nisa ve Efe Fotoğraf ${i}`;
+
+
+
+img.onerror=function(){
+
+img.onerror=function(){
+
+box.remove();
+
+};
+
+
+img.src=`pages/${i}.jpg`;
+
+};
+
+
+
+box.appendChild(img);
+
+gallery.appendChild(box);
+
+
 }
+
+
+
+
+// AŞK SAYACI ❤️
+
+
+const startDate=new Date("2026-07-09T00:00:00");
+
+
+
+function updateCounter(){
+
+
+const now=new Date();
+
+
+const diff=now-startDate;
+
+
+
+if(diff<0){
+
+document.getElementById("counter").innerHTML=
+"❤️ Hikâyemiz 09 Temmuz 2026'da başlıyor ❤️";
+
+return;
+
+}
+
+
+
+const seconds=Math.floor(diff/1000);
+
+
+const days=Math.floor(seconds/86400);
+
+const hours=Math.floor((seconds%86400)/3600);
+
+const minutes=Math.floor((seconds%3600)/60);
+
+const secs=seconds%60;
+
+
+
+document.getElementById("counter").innerHTML=
+
+`
+❤️ ${days} gün 
+${hours} saat 
+${minutes} dakika 
+${secs} saniye ❤️
+`;
+
+}
+
+
+
+setInterval(updateCounter,1000);
+
+updateCounter();
+
+
+
+
+
+// UÇAN KALPLER
+
+
+function createHeart(){
+
+
+const heart=document.createElement("div");
+
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+
+heart.style.left=Math.random()*100+"vw";
+
+
+heart.style.animationDuration=
+(3+Math.random()*5)+"s";
+
+
+heart.style.fontSize=
+(10+Math.random()*25)+"px";
+
+
+document.body.appendChild(heart);
+
+
+
+setTimeout(()=>{
+
+heart.remove();
+
+},8000);
+
+
+}
+
+
+
+setInterval(createHeart,400);
+
+
+
 </script>
+
+
 </body>
 </html>
