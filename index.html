@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nisa ❤️ Efe</title>
+<title>Nisa ❤️ Efe | Hikâyemiz</title>
 
 <style>
 
@@ -12,43 +13,40 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Arial',sans-serif;
+font-family:'Segoe UI',Arial,sans-serif;
 }
+
 
 body{
 
 background:
-radial-gradient(circle at top,#3b0a18,#000);
+linear-gradient(180deg,#14000b,#000);
 
 color:white;
 text-align:center;
-min-height:100vh;
 overflow-x:hidden;
 
 }
 
 
-/* Kalpler */
+/* ARKA PLAN YILDIZLARI */
 
-.heart{
+.star{
 
 position:fixed;
-color:#ff4d6d;
-font-size:20px;
-animation:fall linear infinite;
-opacity:.8;
+width:3px;
+height:3px;
+background:white;
+border-radius:50%;
+animation:twinkle 3s infinite;
 
 }
 
 
-@keyframes fall{
+@keyframes twinkle{
 
-0%{
-transform:translateY(-10vh) rotate(0deg);
-}
-
-100%{
-transform:translateY(110vh) rotate(360deg);
+50%{
+opacity:.2;
 }
 
 }
@@ -58,39 +56,28 @@ transform:translateY(110vh) rotate(360deg);
 
 header{
 
-padding:50px 20px;
+padding:60px 20px;
 
 }
+
 
 
 h1{
 
-font-size:48px;
+font-size:55px;
+color:#ffb3c1;
 
-animation:glow 2s infinite alternate;
-
-}
-
-
-@keyframes glow{
-
-from{
-text-shadow:0 0 10px #ff4d6d;
-}
-
-to{
-text-shadow:0 0 30px #ffb3c1;
-}
+text-shadow:
+0 0 20px #ff4d6d;
 
 }
 
 
 
-p{
+.subtitle{
 
-margin-top:15px;
-font-size:18px;
-opacity:.8;
+margin-top:20px;
+font-size:20px;
 
 }
 
@@ -99,30 +86,141 @@ opacity:.8;
 
 /* Sayaç */
 
-#counter{
 
-margin:30px auto;
+.counter-box{
 
-max-width:600px;
+margin:40px auto;
 
-padding:20px;
+max-width:900px;
 
-border-radius:25px;
+display:flex;
 
-background:rgba(255,255,255,.08);
+justify-content:center;
 
-backdrop-filter:blur(10px);
+flex-wrap:wrap;
 
-font-size:25px;
-
-color:#ffb3c1;
-
-box-shadow:
-0 0 30px rgba(255,77,109,.3);
+gap:15px;
 
 }
 
 
+
+.time{
+
+background:
+rgba(255,255,255,.08);
+
+border-radius:20px;
+
+padding:20px;
+
+width:130px;
+
+backdrop-filter:blur(10px);
+
+box-shadow:
+0 0 20px rgba(255,77,109,.3);
+
+}
+
+
+
+.time span{
+
+display:block;
+
+font-size:35px;
+
+color:#ff7b9c;
+
+font-weight:bold;
+
+}
+
+
+
+
+
+section{
+
+padding:40px 20px;
+
+}
+
+
+
+
+.card{
+
+max-width:900px;
+
+margin:auto;
+
+background:
+rgba(255,255,255,.06);
+
+padding:30px;
+
+border-radius:25px;
+
+box-shadow:
+0 0 30px rgba(255,77,109,.2);
+
+}
+
+
+
+h2{
+
+color:#ff8fa3;
+
+margin-bottom:20px;
+
+}
+
+
+
+
+
+button{
+
+margin-top:20px;
+
+padding:15px 30px;
+
+border:0;
+
+border-radius:50px;
+
+background:#ff4d6d;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+}
+
+
+
+
+#letter{
+
+display:none;
+
+margin-top:20px;
+
+line-height:1.8;
+
+font-size:18px;
+
+}
+
+
+
+
+/* GALERİ */
 
 
 #gallery{
@@ -132,11 +230,9 @@ display:grid;
 grid-template-columns:
 repeat(auto-fit,minmax(230px,1fr));
 
-gap:25px;
+gap:20px;
 
-padding:30px;
-
-max-width:1300px;
+max-width:1200px;
 
 margin:auto;
 
@@ -150,13 +246,6 @@ overflow:hidden;
 
 border-radius:25px;
 
-background:#222;
-
-box-shadow:
-0 10px 30px rgba(255,0,80,.2);
-
-animation:show 1s;
-
 }
 
 
@@ -165,7 +254,7 @@ animation:show 1s;
 
 width:100%;
 
-height:340px;
+height:330px;
 
 object-fit:cover;
 
@@ -179,31 +268,8 @@ transition:.5s;
 
 transform:scale(1.1);
 
-filter:brightness(1.1);
-
 }
 
-
-
-@keyframes show{
-
-from{
-
-opacity:0;
-
-transform:translateY(30px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
 
 
 
@@ -212,39 +278,58 @@ footer{
 
 padding:50px;
 
-font-size:18px;
-
 color:#ffb3c1;
+
+font-size:20px;
 
 }
 
 
 
 
-@media(max-width:700px){
+.heart{
+
+position:fixed;
+
+animation:heartFall linear infinite;
+
+}
+
+
+
+@keyframes heartFall{
+
+from{
+
+transform:translateY(-10vh);
+
+}
+
+to{
+
+transform:translateY(110vh);
+
+}
+
+}
+
+
+
+@media(max-width:600px){
 
 h1{
 
-font-size:32px;
+font-size:35px;
 
 }
 
+.time{
 
-#counter{
-
-font-size:18px;
-
-}
-
-.photo img{
-
-height:260px;
+width:100px;
 
 }
 
 }
-
-
 
 </style>
 
@@ -255,6 +340,7 @@ height:260px;
 <body>
 
 
+
 <header>
 
 <h1>
@@ -262,14 +348,39 @@ height:260px;
 </h1>
 
 
-<p>
-09 Temmuz 2026'dan beri birlikte 💖
-</p>
+<div class="subtitle">
+
+09 Temmuz 2026'dan beri başlayan hikâyemiz...
+
+</div>
 
 
-<div id="counter">
+<div class="counter-box">
 
-Başlıyoruz... ❤️
+
+<div class="time">
+<span id="days">0</span>
+Gün
+</div>
+
+
+<div class="time">
+<span id="hours">0</span>
+Saat
+</div>
+
+
+<div class="time">
+<span id="minutes">0</span>
+Dakika
+</div>
+
+
+<div class="time">
+<span id="seconds">0</span>
+Saniye
+</div>
+
 
 </div>
 
@@ -279,15 +390,122 @@ Başlıyoruz... ❤️
 
 
 
+
+<section>
+
+
+<div class="card">
+
+
+<h2>
+💌 Sana Özel
+</h2>
+
+
+<p>
+Bazen hayatımıza biri girer ve her şey daha güzel görünmeye başlar...
+</p>
+
+
+<button onclick="openLetter()">
+
+Mektubu Aç ❤️
+
+</button>
+
+
+
+<div id="letter">
+
+
+<p>
+
+Nisa ❤️
+
+Seninle geçen her an,
+hayatımdaki en güzel anılardan biri olacak.
+
+Gülüşün, sesin ve varlığın benim için çok değerli.
+
+Bu sadece bir başlangıç...
+
+Daha nice güzel günlere birlikte. ❤️
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section>
+
+
+<div class="card">
+
+
+<h2>
+📖 Hikâyemiz
+</h2>
+
+
+<p>
+
+🌹 09 Temmuz 2026  
+<br>
+Yeni bir hikâyenin başladığı gün...
+
+<br><br>
+
+✨ İlk heyecanlar,
+<br>
+❤️ İlk güzel anılar,
+<br>
+📸 Birlikte biriktireceğimiz hatıralar...
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section>
+
+
+<h2>
+📸 Anılarımız
+</h2>
+
+
 <div id="gallery"></div>
+
+
+</section>
+
+
 
 
 
 <footer>
 
-"Her saniye yeni bir anı, her anı bizim hikâyemiz..." ❤️
+"Sen benim en güzel tesadüfümsün..." ❤️
 
 </footer>
+
 
 
 
@@ -295,22 +513,84 @@ Başlıyoruz... ❤️
 <script>
 
 
-// FOTOĞRAF GALERİSİ
+// SAYAC
+
+
+const start =
+new Date("2026-07-09T00:00:00");
+
+
+
+function counter(){
+
+
+let now=new Date();
+
+let diff=now-start;
+
+
+if(diff<0)return;
+
+
+
+let sec=Math.floor(diff/1000);
+
+
+let days=Math.floor(sec/86400);
+
+let hours=Math.floor(sec%86400/3600);
+
+let minutes=Math.floor(sec%3600/60);
+
+let seconds=sec%60;
+
+
+
+document.getElementById("days").innerHTML=days;
+
+document.getElementById("hours").innerHTML=hours;
+
+document.getElementById("minutes").innerHTML=minutes;
+
+document.getElementById("seconds").innerHTML=seconds;
+
+
+}
+
+
+setInterval(counter,1000);
+
+counter();
+
+
+
+
+
+// MEKTUP
+
+
+function openLetter(){
+
+document.getElementById("letter").style.display="block";
+
+}
+
+
+
+
+
+// GALERİ
 
 
 const gallery=document.getElementById("gallery");
 
 
-const totalPhotos=20;
+for(let i=1;i<=20;i++){
 
 
+let div=document.createElement("div");
 
-for(let i=1;i<=totalPhotos;i++){
-
-
-let box=document.createElement("div");
-
-box.className="photo";
+div.className="photo";
 
 
 let img=document.createElement("img");
@@ -318,28 +598,17 @@ let img=document.createElement("img");
 
 img.src=`pages/${i}.jpeg`;
 
-img.alt=`Nisa ve Efe Fotoğraf ${i}`;
 
+img.onerror=()=>{
 
-
-img.onerror=function(){
-
-img.onerror=function(){
-
-box.remove();
+div.remove();
 
 };
 
 
-img.src=`pages/${i}.jpg`;
+div.appendChild(img);
 
-};
-
-
-
-box.appendChild(img);
-
-gallery.appendChild(box);
+gallery.appendChild(div);
 
 
 }
@@ -347,109 +616,62 @@ gallery.appendChild(box);
 
 
 
-// AŞK SAYACI ❤️
+
+// KALPLER
 
 
-const startDate=new Date("2026-07-09T00:00:00");
+setInterval(()=>{
 
 
+let h=document.createElement("div");
 
-function updateCounter(){
+h.className="heart";
 
+h.innerHTML="❤️";
 
-const now=new Date();
+h.style.left=Math.random()*100+"vw";
 
-
-const diff=now-startDate;
-
-
-
-if(diff<0){
-
-document.getElementById("counter").innerHTML=
-"❤️ Hikâyemiz 09 Temmuz 2026'da başlıyor ❤️";
-
-return;
-
-}
+h.style.fontSize=
+Math.random()*25+10+"px";
 
 
-
-const seconds=Math.floor(diff/1000);
-
-
-const days=Math.floor(seconds/86400);
-
-const hours=Math.floor((seconds%86400)/3600);
-
-const minutes=Math.floor((seconds%3600)/60);
-
-const secs=seconds%60;
+h.style.animationDuration=
+Math.random()*5+3+"s";
 
 
-
-document.getElementById("counter").innerHTML=
-
-`
-❤️ ${days} gün 
-${hours} saat 
-${minutes} dakika 
-${secs} saniye ❤️
-`;
-
-}
+document.body.appendChild(h);
 
 
+setTimeout(()=>h.remove(),8000);
 
-setInterval(updateCounter,1000);
 
-updateCounter();
+},500);
 
 
 
 
 
-// UÇAN KALPLER
+// YILDIZLAR
 
 
-function createHeart(){
+for(let i=0;i<80;i++){
 
 
-const heart=document.createElement("div");
+let s=document.createElement("div");
+
+s.className="star";
+
+s.style.left=Math.random()*100+"vw";
+
+s.style.top=Math.random()*100+"vh";
+
+s.style.animationDelay=Math.random()*3+"s";
 
 
-heart.className="heart";
-
-heart.innerHTML="❤️";
-
-
-heart.style.left=Math.random()*100+"vw";
-
-
-heart.style.animationDuration=
-(3+Math.random()*5)+"s";
-
-
-heart.style.fontSize=
-(10+Math.random()*25)+"px";
-
-
-document.body.appendChild(heart);
-
-
-
-setTimeout(()=>{
-
-heart.remove();
-
-},8000);
+document.body.appendChild(s);
 
 
 }
-
-
-
-setInterval(createHeart,400);
 
 
 
