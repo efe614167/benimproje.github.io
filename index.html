@@ -16,28 +16,69 @@ box-sizing:border-box;
 font-family:'Segoe UI',Arial,sans-serif;
 }
 
-
 body{
-
-background:
-linear-gradient(180deg,#14000b,#000);
-
+background:linear-gradient(180deg,#160009,#000);
 color:white;
 text-align:center;
 overflow-x:hidden;
+}
+
+
+/* Müzik butonu */
+
+#musicBtn{
+
+position:fixed;
+
+bottom:25px;
+
+right:25px;
+
+background:#ff4d6d;
+
+color:white;
+
+border:none;
+
+padding:15px 25px;
+
+border-radius:50px;
+
+font-size:16px;
+
+cursor:pointer;
+
+z-index:999;
+
+box-shadow:0 0 25px rgba(255,77,109,.6);
+
+transition:.3s;
 
 }
 
 
-/* ARKA PLAN YILDIZLARI */
+#musicBtn:hover{
+
+transform:scale(1.1);
+
+}
+
+
+
+/* Yıldız */
 
 .star{
 
 position:fixed;
+
 width:3px;
+
 height:3px;
+
 background:white;
+
 border-radius:50%;
+
 animation:twinkle 3s infinite;
 
 }
@@ -53,6 +94,36 @@ opacity:.2;
 
 
 
+/* Kalp */
+
+.heart{
+
+position:fixed;
+
+animation:fall linear;
+
+z-index:-1;
+
+}
+
+
+@keyframes fall{
+
+from{
+
+transform:translateY(-10vh);
+
+}
+
+to{
+
+transform:translateY(110vh);
+
+}
+
+}
+
+
 
 header{
 
@@ -61,37 +132,30 @@ padding:60px 20px;
 }
 
 
-
 h1{
 
 font-size:55px;
+
 color:#ffb3c1;
 
-text-shadow:
-0 0 20px #ff4d6d;
+text-shadow:0 0 25px #ff4d6d;
 
 }
-
 
 
 .subtitle{
 
 margin-top:20px;
+
 font-size:20px;
 
 }
 
 
 
-
 /* Sayaç */
 
-
 .counter-box{
-
-margin:40px auto;
-
-max-width:900px;
 
 display:flex;
 
@@ -101,28 +165,27 @@ flex-wrap:wrap;
 
 gap:15px;
 
+margin:40px auto;
+
 }
 
 
 
 .time{
 
-background:
-rgba(255,255,255,.08);
-
-border-radius:20px;
+background:rgba(255,255,255,.08);
 
 padding:20px;
+
+border-radius:20px;
 
 width:130px;
 
 backdrop-filter:blur(10px);
 
-box-shadow:
-0 0 20px rgba(255,77,109,.3);
+box-shadow:0 0 20px rgba(255,77,109,.3);
 
 }
-
 
 
 .time span{
@@ -131,21 +194,12 @@ display:block;
 
 font-size:35px;
 
-color:#ff7b9c;
-
 font-weight:bold;
 
-}
-
-
-
-
-
-section{
-
-padding:40px 20px;
+color:#ff8fa3;
 
 }
+
 
 
 
@@ -154,20 +208,17 @@ padding:40px 20px;
 
 max-width:900px;
 
-margin:auto;
+margin:40px auto;
 
-background:
-rgba(255,255,255,.06);
+background:rgba(255,255,255,.06);
 
-padding:30px;
+padding:35px;
 
 border-radius:25px;
 
-box-shadow:
-0 0 30px rgba(255,77,109,.2);
+box-shadow:0 0 30px rgba(255,77,109,.2);
 
 }
-
 
 
 h2{
@@ -177,8 +228,6 @@ color:#ff8fa3;
 margin-bottom:20px;
 
 }
-
-
 
 
 
@@ -204,37 +253,32 @@ cursor:pointer;
 
 
 
-
 #letter{
 
 display:none;
 
-margin-top:20px;
+margin-top:25px;
 
 line-height:1.8;
-
-font-size:18px;
 
 }
 
 
 
 
-/* GALERİ */
-
-
 #gallery{
 
 display:grid;
 
-grid-template-columns:
-repeat(auto-fit,minmax(230px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
 
 gap:20px;
 
 max-width:1200px;
 
 margin:auto;
+
+padding:30px;
 
 }
 
@@ -278,38 +322,9 @@ footer{
 
 padding:50px;
 
-color:#ffb3c1;
-
 font-size:20px;
 
-}
-
-
-
-
-.heart{
-
-position:fixed;
-
-animation:heartFall linear infinite;
-
-}
-
-
-
-@keyframes heartFall{
-
-from{
-
-transform:translateY(-10vh);
-
-}
-
-to{
-
-transform:translateY(110vh);
-
-}
+color:#ffb3c1;
 
 }
 
@@ -329,19 +344,46 @@ width:100px;
 
 }
 
+#musicBtn{
+
+bottom:15px;
+
+right:15px;
+
 }
+
+}
+
 
 </style>
 
 </head>
 
 
-
 <body>
 
 
 
+<!-- MÜZİK -->
+
+<audio id="loveMusic" loop>
+
+<source src="music/aşk.mp3" type="audio/mpeg">
+
+</audio>
+
+
+<button id="musicBtn" onclick="toggleMusic()">
+
+🎵 Müziği Başlat ❤️
+
+</button>
+
+
+
+
 <header>
+
 
 <h1>
 ❤️ Nisa & Efe ❤️
@@ -355,30 +397,43 @@ width:100px;
 </div>
 
 
+
 <div class="counter-box">
 
 
 <div class="time">
+
 <span id="days">0</span>
+
 Gün
+
 </div>
 
 
 <div class="time">
+
 <span id="hours">0</span>
+
 Saat
+
 </div>
 
 
 <div class="time">
+
 <span id="minutes">0</span>
+
 Dakika
+
 </div>
 
 
 <div class="time">
+
 <span id="seconds">0</span>
+
 Saniye
+
 </div>
 
 
@@ -391,19 +446,19 @@ Saniye
 
 
 
-<section>
 
+<section>
 
 <div class="card">
 
 
-<h2>
-💌 Sana Özel
-</h2>
+<h2>💌 Sana Özel</h2>
 
 
 <p>
-Bazen hayatımıza biri girer ve her şey daha güzel görünmeye başlar...
+
+Bazen hayatımıza biri girer ve her şey daha güzel olmaya başlar...
+
 </p>
 
 
@@ -414,33 +469,30 @@ Mektubu Aç ❤️
 </button>
 
 
-
 <div id="letter">
 
 
-<p>
-
 Nisa ❤️
 
-Seninle geçen her an,
-hayatımdaki en güzel anılardan biri olacak.
+<br><br>
 
-Gülüşün, sesin ve varlığın benim için çok değerli.
+Sen hayatımdaki en güzel hikâyelerden biri olacaksın.
 
-Bu sadece bir başlangıç...
+Birlikte daha çok gülmek,
+daha çok anı biriktirmek dileğiyle...
 
-Daha nice güzel günlere birlikte. ❤️
+<br><br>
 
-</p>
-
-
-</div>
+Seni seviyorum ❤️
 
 
 </div>
 
+
+</div>
 
 </section>
+
 
 
 
@@ -452,24 +504,20 @@ Daha nice güzel günlere birlikte. ❤️
 <div class="card">
 
 
-<h2>
-📖 Hikâyemiz
-</h2>
+<h2>📖 Hikâyemiz</h2>
 
 
 <p>
 
-🌹 09 Temmuz 2026  
-<br>
-Yeni bir hikâyenin başladığı gün...
+🌹 09 Temmuz 2026
 
 <br><br>
 
-✨ İlk heyecanlar,
-<br>
-❤️ İlk güzel anılar,
-<br>
-📸 Birlikte biriktireceğimiz hatıralar...
+Bir başlangıç...
+
+<br><br>
+
+✨ Daha yazılacak binlerce güzel anımız var.
 
 </p>
 
@@ -483,8 +531,9 @@ Yeni bir hikâyenin başladığı gün...
 
 
 
-<section>
 
+
+<section>
 
 <h2>
 📸 Anılarımız
@@ -510,57 +559,56 @@ Yeni bir hikâyenin başladığı gün...
 
 
 
+
 <script>
+
 
 
 // SAYAC
 
 
-const start =
+const startDate =
 new Date("2026-07-09T00:00:00");
 
 
 
-function counter(){
+function updateCounter(){
 
 
 let now=new Date();
 
-let diff=now-start;
+let diff=now-startDate;
 
 
 if(diff<0)return;
 
 
-
-let sec=Math.floor(diff/1000);
-
-
-let days=Math.floor(sec/86400);
-
-let hours=Math.floor(sec%86400/3600);
-
-let minutes=Math.floor(sec%3600/60);
-
-let seconds=sec%60;
+let total=Math.floor(diff/1000);
 
 
+document.getElementById("days").innerHTML=
+Math.floor(total/86400);
 
-document.getElementById("days").innerHTML=days;
 
-document.getElementById("hours").innerHTML=hours;
+document.getElementById("hours").innerHTML=
+Math.floor(total%86400/3600);
 
-document.getElementById("minutes").innerHTML=minutes;
 
-document.getElementById("seconds").innerHTML=seconds;
+document.getElementById("minutes").innerHTML=
+Math.floor(total%3600/60);
+
+
+document.getElementById("seconds").innerHTML=
+total%60;
 
 
 }
 
 
-setInterval(counter,1000);
+setInterval(updateCounter,1000);
 
-counter();
+updateCounter();
+
 
 
 
@@ -588,9 +636,9 @@ const gallery=document.getElementById("gallery");
 for(let i=1;i<=20;i++){
 
 
-let div=document.createElement("div");
+let box=document.createElement("div");
 
-div.className="photo";
+box.className="photo";
 
 
 let img=document.createElement("img");
@@ -599,19 +647,66 @@ let img=document.createElement("img");
 img.src=`pages/${i}.jpeg`;
 
 
-img.onerror=()=>{
+img.onerror=function(){
 
-div.remove();
+box.remove();
 
 };
 
 
-div.appendChild(img);
+box.appendChild(img);
 
-gallery.appendChild(div);
+gallery.appendChild(box);
 
 
 }
+
+
+
+
+
+
+// MÜZİK
+
+
+const music=document.getElementById("loveMusic");
+
+const musicBtn=document.getElementById("musicBtn");
+
+
+let playing=false;
+
+
+
+function toggleMusic(){
+
+
+if(playing){
+
+music.pause();
+
+musicBtn.innerHTML="🎵 Müziği Başlat ❤️";
+
+
+}else{
+
+
+music.volume=.4;
+
+music.play();
+
+musicBtn.innerHTML="⏸ Müziği Durdur ❤️";
+
+
+}
+
+
+playing=!playing;
+
+
+}
+
+
 
 
 
@@ -623,29 +718,40 @@ gallery.appendChild(div);
 setInterval(()=>{
 
 
-let h=document.createElement("div");
+let heart=document.createElement("div");
 
-h.className="heart";
 
-h.innerHTML="❤️";
+heart.className="heart";
 
-h.style.left=Math.random()*100+"vw";
+heart.innerHTML="❤️";
 
-h.style.fontSize=
+
+heart.style.left=Math.random()*100+"vw";
+
+
+heart.style.fontSize=
 Math.random()*25+10+"px";
 
 
-h.style.animationDuration=
+heart.style.animationDuration=
 Math.random()*5+3+"s";
 
 
-document.body.appendChild(h);
+document.body.appendChild(heart);
 
 
-setTimeout(()=>h.remove(),8000);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},8000);
+
 
 
 },500);
+
+
 
 
 
@@ -657,18 +763,18 @@ setTimeout(()=>h.remove(),8000);
 for(let i=0;i<80;i++){
 
 
-let s=document.createElement("div");
-
-s.className="star";
-
-s.style.left=Math.random()*100+"vw";
-
-s.style.top=Math.random()*100+"vh";
-
-s.style.animationDelay=Math.random()*3+"s";
+let star=document.createElement("div");
 
 
-document.body.appendChild(s);
+star.className="star";
+
+
+star.style.left=Math.random()*100+"vw";
+
+star.style.top=Math.random()*100+"vh";
+
+
+document.body.appendChild(star);
 
 
 }
