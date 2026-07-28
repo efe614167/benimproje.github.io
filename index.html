@@ -627,28 +627,46 @@ document.getElementById("letter").style.display="block";
 
 
 
-// GALERİ
 
-const gallery=document.getElementById("gallery");
-
-for(let i=1;i<=20;i++){
-
-let box=document.createElement("div");
-box.className="photo";
-
-let img=document.createElement("img");
-
-img.src=`pages/${i}.jpeg`;
-
-img.onerror=function(){
-box.remove();
-};
-
-box.appendChild(img);
 gallery.appendChild(box);
 
+// GALERİ
+
+const gallery = document.getElementById("gallery");
+
+// pages klasöründeki ilk 20 fotoğraf (.jpeg)
+for (let i = 1; i <= 20; i++) {
+
+    let box = document.createElement("div");
+    box.className = "photo";
+
+    let img = document.createElement("img");
+    img.src = `pages/${i}.jpeg`;
+
+    img.onerror = function () {
+        box.remove();
+    };
+
+    box.appendChild(img);
+    gallery.appendChild(box);
 }
 
+// a klasöründeki 23 yeni fotoğraf (.jpeg)
+for (let i = 1; i <= 23; i++) {
+
+    let box = document.createElement("div");
+    box.className = "photo";
+
+    let img = document.createElement("img");
+    img.src = `a/${i}.jpeg`;
+
+    img.onerror = function () {
+        box.remove();
+    };
+
+    box.appendChild(img);
+    gallery.appendChild(box);
+}
 
 
 // MÜZİK
