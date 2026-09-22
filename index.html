@@ -1,791 +1,852 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Nisa ❤️ Efe | Hikâyemiz</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',Arial,sans-serif;
-}
-
-body{
-background:linear-gradient(180deg,#160009,#000);
-color:white;
-text-align:center;
-overflow-x:hidden;
-}
-
-
-/* Müzik butonu */
-
-#musicBtn{
-
-position:fixed;
-
-bottom:25px;
-
-right:25px;
-
-background:#ff4d6d;
-
-color:white;
-
-border:none;
-
-padding:15px 25px;
-
-border-radius:50px;
-
-font-size:16px;
-
-cursor:pointer;
-
-z-index:999;
-
-box-shadow:0 0 25px rgba(255,77,109,.6);
-
-transition:.3s;
-
-}
-
-
-#musicBtn:hover{
-
-transform:scale(1.1);
-
-}
-
-
-
-/* Yıldız */
-
-.star{
-
-position:fixed;
-
-width:3px;
-
-height:3px;
-
-background:white;
-
-border-radius:50%;
-
-animation:twinkle 3s infinite;
-
-}
-
-
-@keyframes twinkle{
-
-50%{
-opacity:.2;
-}
-
-}
-
-
-
-/* Kalp */
-
-.heart{
-
-position:fixed;
-
-animation:fall linear;
-
-z-index:-1;
-
-}
-
-
-@keyframes fall{
-
-from{
-
-transform:translateY(-10vh);
-
-}
-
-to{
-
-transform:translateY(110vh);
-
-}
-
-}
-
-
-
-header{
-
-padding:60px 20px;
-
-}
-
-
-h1{
-
-font-size:55px;
-
-color:#ffb3c1;
-
-text-shadow:0 0 25px #ff4d6d;
-
-}
-
-
-.subtitle{
-
-margin-top:20px;
-
-font-size:20px;
-
-}
-
-
-
-/* Sayaç */
-
-.counter-box{
-
-display:flex;
-
-justify-content:center;
-
-flex-wrap:wrap;
-
-gap:15px;
-
-margin:40px auto;
-
-}
-
-
-
-.time{
-
-background:rgba(255,255,255,.08);
-
-padding:20px;
-
-border-radius:20px;
-
-width:130px;
-
-backdrop-filter:blur(10px);
-
-box-shadow:0 0 20px rgba(255,77,109,.3);
-
-}
-
-
-.time span{
-
-display:block;
-
-font-size:35px;
-
-font-weight:bold;
-
-color:#ff8fa3;
-
-}
-
-
-
-
-
-.card{
-
-max-width:900px;
-
-margin:40px auto;
-
-background:rgba(255,255,255,.06);
-
-padding:35px;
-
-border-radius:25px;
-
-box-shadow:0 0 30px rgba(255,77,109,.2);
-
-}
-
-
-h2{
-
-color:#ff8fa3;
-
-margin-bottom:20px;
-
-}
-
-
-
-button{
-
-margin-top:20px;
-
-padding:15px 30px;
-
-border:0;
-
-border-radius:50px;
-
-background:#ff4d6d;
-
-color:white;
-
-font-size:18px;
-
-cursor:pointer;
-
-}
-
-
-
-#letter{
-
-display:none;
-
-margin-top:25px;
-
-line-height:1.8;
-
-}
-
-
-
-
-#gallery{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-
-gap:20px;
-
-max-width:1200px;
-
-margin:auto;
-
-padding:30px;
-
-}
-
-
-
-.photo{
-
-overflow:hidden;
-
-border-radius:25px;
-
-}
-
-
-
-.photo img{
-
-width:100%;
-
-height:330px;
-
-object-fit:cover;
-
-transition:.5s;
-
-}
-
-
-
-.photo:hover img{
-
-transform:scale(1.1);
-
-}
-
-
-
-
-
-footer{
-
-padding:50px;
-
-font-size:20px;
-
-color:#ffb3c1;
-
-}
-
-
-
-@media(max-width:600px){
-
-h1{
-
-font-size:35px;
-
-}
-
-.time{
-
-width:100px;
-
-}
-
-#musicBtn{
-
-bottom:15px;
-
-right:15px;
-
-}
-
-}
-
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yeşildağ Mobilya | Özel Ölçü Dolap</title>
+
+    <meta name="description"
+          content="Yeşildağ Mobilya - Özel ölçü gardırop, sürgülü dolap, vestiyer ve mutfak dolabı üretimi.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f3f0;
+            color: #292622;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            width: 100%;
+            background: #211d19;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #c49a68;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #c49a68;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 650px;
+            background:
+                linear-gradient(
+                    rgba(20, 17, 14, 0.63),
+                    rgba(20, 17, 14, 0.63)
+                ),
+                url("dolap.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-small {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 13px;
+            color: #d1b18b;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 7vw, 72px);
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #e5e5e5;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-gold {
+            background: #a97d4f;
+            color: white;
+        }
+
+        .btn-gold:hover {
+            background: #8f673f;
+            transform: translateY(-2px);
+        }
+
+        .btn-light {
+            border: 1px solid white;
+            color: white;
+        }
+
+        .btn-light:hover {
+            background: white;
+            color: #211d19;
+        }
+
+        /* ================= GENERAL ================= */
+
+        section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #a97d4f;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-top: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+            margin-top: 12px;
+        }
+
+        /* ================= PRODUCTS ================= */
+
+        .products {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(240px, 1fr));
+
+            gap: 25px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-7px);
+        }
+
+        .product img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-info {
+            padding: 23px;
+        }
+
+        .product-info h3 {
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .product-info p {
+            color: #777;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* ================= WHY US ================= */
+
+        .why {
+            background: #211d19;
+            color: white;
+        }
+
+        .why .section-title p {
+            color: #aaa;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 25px;
+        }
+
+        .feature {
+            border: 1px solid #403a34;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .feature-icon {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #aaa;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            color: #666;
+            line-height: 1.9;
+            font-size: 17px;
+        }
+
+        /* ================= GALLERY ================= */
+
+        .gallery {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.02);
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-section {
+            background: #e8e3dc;
+        }
+
+        .contact-box {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            border-radius: 20px;
+            padding: 45px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .contact-box h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .contact-box p {
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        .whatsapp-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .whatsapp {
+            border: none;
+            padding: 18px;
+            border-radius: 10px;
+            background: #25D366;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .whatsapp:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+        }
+
+        .phone {
+            margin-top: 25px;
+            color: #555;
+            line-height: 2;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #171411;
+            color: white;
+            padding: 35px 7%;
+            text-align: center;
+        }
+
+        footer h3 {
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 17px 5%;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                min-height: 580px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .whatsapp-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                padding: 30px 20px;
+            }
+        }
+
+    </style>
 </head>
-
 
 <body>
 
 
-
-<!-- MÜZİK -->
-
-<audio id="loveMusic" loop>
-
-<source src="music/aşk.mp3" type="audio/mpeg">
-
-</audio>
-
-
-<button id="musicBtn" onclick="toggleMusic()">
-
-🎵 Müziği Başlat ❤️
-
-</button>
-
-
-
+<!-- ================= HEADER ================= -->
 
 <header>
 
+    <div class="logo">
+        Yeşildağ <span>Mobilya</span>
+    </div>
 
-<h1>
-❤️ Nisa & Efe ❤️
-</h1>
-
-
-<div class="subtitle">
-
-09 Temmuz 2026'dan beri başlayan hikâyemiz...
-
-</div>
-
-
-
-<div class="counter-box">
-
-
-<div class="time">
-
-<span id="days">0</span>
-
-Gün
-
-</div>
-
-
-<div class="time">
-
-<span id="hours">0</span>
-
-Saat
-
-</div>
-
-
-<div class="time">
-
-<span id="minutes">0</span>
-
-Dakika
-
-</div>
-
-
-<div class="time">
-
-<span id="seconds">0</span>
-
-Saniye
-
-</div>
-
-
-</div>
-
+    <nav>
+        <a href="#anasayfa">Ana Sayfa</a>
+        <a href="#dolaplar">Dolaplar</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#hakkimizda">Hakkımızda</a>
+        <a href="#iletisim">İletişim</a>
+    </nav>
 
 </header>
 
 
+<!-- ================= HERO ================= -->
 
+<section class="hero" id="anasayfa">
 
+    <div class="hero-content">
 
+        <div class="hero-small">
+            Özel Ölçü • Özel Tasarım • Üretim
+        </div>
 
-<section>
+        <h1>
+            Hayalinizdeki<br>
+            Dolabı Tasarlıyoruz
+        </h1>
 
-<div class="card">
+        <p>
+            Yeşildağ Mobilya olarak sadece dolap üzerine çalışıyoruz.
+            Alanınıza ve ihtiyaçlarınıza özel modern, kullanışlı
+            ve kaliteli dolaplar üretiyoruz.
+        </p>
 
+        <div class="hero-buttons">
 
-<h2>💌 Sana Özel</h2>
+            <a href="#dolaplar" class="btn btn-gold">
+                Dolap Modellerini İncele
+            </a>
 
+            <a href="#iletisim" class="btn btn-light">
+                Teklif Al
+            </a>
 
-<p>
+        </div>
 
-Bazen hayatımıza biri girer ve her şey daha güzel olmaya başlar...
-
-</p>
-
-
-<button onclick="openLetter()">
-
-Mektubu Aç ❤️
-
-</button>
-
-
-<div id="letter">
-
-
-Nisa ❤️
-
-<br><br>
-
-Sen hayatımdaki en güzel hikâyelerden biri olacaksın.
-
-Birlikte daha çok gülmek,
-daha çok anı biriktirmek dileğiyle...
-
-<br><br>
-
-Seni seviyorum ❤️
-
-
-</div>
-
-
-</div>
+    </div>
 
 </section>
 
 
+<!-- ================= PRODUCTS ================= -->
+
+<section id="dolaplar">
+
+    <div class="section-title">
+
+        <span>Ürünlerimiz</span>
+
+        <h2>Dolap Modellerimiz</h2>
+
+        <p>
+            İhtiyacınıza göre özel ölçü ve tasarım.
+        </p>
+
+    </div>
 
 
+    <div class="products">
 
 
-<section>
+        <div class="product">
+
+            <img src="gardrop.jpg" alt="Gardırop">
+
+            <div class="product-info">
+
+                <h3>Gardırop</h3>
+
+                <p>
+                    Yatak odalarınıza özel ölçü,
+                    modern ve kullanışlı gardıroplar.
+                </p>
+
+            </div>
+
+        </div>
 
 
-<div class="card">
+        <div class="product">
+
+            <img src="surgulu.jpg" alt="Sürgülü Dolap">
+
+            <div class="product-info">
+
+                <h3>Sürgülü Dolap</h3>
+
+                <p>
+                    Alan tasarrufu sağlayan,
+                    modern sürgülü dolap modelleri.
+                </p>
+
+            </div>
+
+        </div>
 
 
-<h2>📖 Hikâyemiz</h2>
+        <div class="product">
+
+            <img src="vestiyer.jpg" alt="Vestiyer">
+
+            <div class="product-info">
+
+                <h3>Vestiyer</h3>
+
+                <p>
+                    Antre ve giriş alanlarınıza
+                    uygun özel tasarım vestiyerler.
+                </p>
+
+            </div>
+
+        </div>
 
 
-<p>
+        <div class="product">
 
-🌹 09 Temmuz 2026
+            <img src="mutfak.jpg" alt="Mutfak Dolabı">
 
-<br><br>
+            <div class="product-info">
 
-Bir başlangıç...
+                <h3>Mutfak Dolabı</h3>
 
-<br><br>
+                <p>
+                    Mutfağınızın ölçülerine göre
+                    özel tasarım dolaplar.
+                </p>
 
-✨ Daha yazılacak binlerce güzel anımız var.
+            </div>
 
-</p>
+        </div>
 
 
-</div>
-
+    </div>
 
 </section>
 
 
+<!-- ================= WHY US ================= -->
+
+<section class="why">
+
+    <div class="section-title">
+
+        <span>Neden Biz?</span>
+
+        <h2>Yeşildağ Mobilya</h2>
+
+        <p>
+            Dolap konusunda ihtiyacınıza özel çözümler.
+        </p>
+
+    </div>
 
 
+    <div class="features">
 
 
+        <div class="feature">
 
-<section>
+            <div class="feature-icon">📐</div>
 
-<h2>
-📸 Anılarımız
-</h2>
+            <h3>Özel Ölçü</h3>
+
+            <p>
+                Dolabınızı kullanılacak alana göre
+                ölçülendiriyor ve tasarlıyoruz.
+            </p>
+
+        </div>
 
 
-<div id="gallery"></div>
+        <div class="feature">
 
+            <div class="feature-icon">🪵</div>
+
+            <h3>Kaliteli Üretim</h3>
+
+            <p>
+                İhtiyacınıza uygun malzeme ve
+                kaliteli işçilik ile üretim.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">✦</div>
+
+            <h3>Özel Tasarım</h3>
+
+            <p>
+                Modern, klasik veya tamamen
+                sizin istediğiniz tasarımlar.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">🤝</div>
+
+            <h3>Müşteri Memnuniyeti</h3>
+
+            <p>
+                Projenin başından teslimata kadar
+                sizinle birlikte ilerliyoruz.
+            </p>
+
+        </div>
+
+
+    </div>
 
 </section>
 
 
+<!-- ================= ABOUT ================= -->
+
+<section id="hakkimizda">
+
+    <div class="about">
+
+        <div class="section-title">
+
+            <span>Hakkımızda</span>
+
+            <h2>Yeşildağ Mobilya</h2>
+
+        </div>
+
+        <p>
+            Yeşildağ Mobilya olarak yalnızca dolap üretimine
+            odaklanıyoruz. Gardırop, sürgülü dolap, vestiyer
+            ve mutfak dolabı gibi ürünleri alanınıza ve
+            ihtiyaçlarınıza göre özel ölçülerde tasarlıyoruz.
+        </p>
+
+        <br>
+
+        <p>
+            Amacımız kullanılmayan alanları değerlendirmek,
+            estetik ve kullanışlı dolap çözümleri sunmaktır.
+        </p>
+
+    </div>
+
+</section>
 
 
+<!-- ================= GALLERY ================= -->
+
+<section id="galeri">
+
+    <div class="section-title">
+
+        <span>Çalışmalarımız</span>
+
+        <h2>Galeri</h2>
+
+        <p>
+            Gerçek çalışmalarımızdan örnekler.
+        </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+        <img src="proje1.jpg" alt="Yeşildağ Mobilya çalışması">
+
+        <img src="proje2.jpg" alt="Özel ölçü dolap">
+
+        <img src="proje3.jpg" alt="Gardırop çalışması">
+
+        <img src="proje4.jpg" alt="Dolap çalışması">
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact-section" id="iletisim">
+
+    <div class="contact-box">
+
+        <h2>Dolabınızı Birlikte Tasarlayalım</h2>
+
+        <p>
+            Ölçünüzü, istediğiniz modeli veya alanın fotoğrafını
+            WhatsApp üzerinden göndererek fiyat bilgisi alabilirsiniz.
+        </p>
+
+
+        <div class="whatsapp-buttons">
+
+            <button
+                class="whatsapp"
+                onclick="openWhatsApp('efe')">
+
+                📱 Efe Yeşildağ
+                <br>
+                <small>WhatsApp'tan Yaz</small>
+
+            </button>
+
+
+            <button
+                class="whatsapp"
+                onclick="openWhatsApp('aslan')">
+
+                📱 Aslan Yeşildağ
+                <br>
+                <small>WhatsApp'tan Yaz</small>
+
+            </button>
+
+        </div>
+
+
+        <div class="phone">
+
+            <strong>Efe Yeşildağ</strong>
+            <br>
+            0542 171 41 61
+
+            <br><br>
+
+            <strong>Aslan Yeşildağ</strong>
+            <br>
+            0543 790 03 04
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-"Sen benim en güzel tesadüfümsün..." ❤️
+    <h3>Yeşildağ Mobilya</h3>
+
+    <p>
+        Özel Ölçü Dolap Tasarım ve Üretim
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 Yeşildağ Mobilya - Tüm Hakları Saklıdır.
+    </p>
 
 </footer>
 
 
-
-
-
+<!-- ================= WHATSAPP ================= -->
 
 <script>
 
+function openWhatsApp(person) {
 
+    let phone = "";
+    let message = "";
 
-// SAYAC
+    if (person === "efe") {
 
+        phone = "905421714161";
 
-const startDate =
-new Date("2026-07-09T00:00:00");
+        message =
+            "Merhaba Efe Bey, Yeşildağ Mobilya web sitesinden ulaşıyorum. Dolap hakkında bilgi ve fiyat almak istiyorum.";
 
+    }
 
+    if (person === "aslan") {
 
-function updateCounter(){
+        phone = "905437900304";
 
+        message =
+            "Merhaba Aslan Bey, Yeşildağ Mobilya web sitesinden ulaşıyorum. Dolap hakkında bilgi ve fiyat almak istiyorum.";
 
-let now=new Date();
+    }
 
-let diff=now-startDate;
+    const url =
+        "https://wa.me/" +
+        phone +
+        "?text=" +
+        encodeURIComponent(message);
 
-
-if(diff<0)return;
-
-
-let total=Math.floor(diff/1000);
-
-
-document.getElementById("days").innerHTML=
-Math.floor(total/86400);
-
-
-document.getElementById("hours").innerHTML=
-Math.floor(total%86400/3600);
-
-
-document.getElementById("minutes").innerHTML=
-Math.floor(total%3600/60);
-
-
-document.getElementById("seconds").innerHTML=
-total%60;
-
+    window.open(url, "_blank");
 
 }
-
-
-setInterval(updateCounter,1000);
-
-updateCounter();
-
-
-
-
-
-
-// MEKTUP
-
-
-function openLetter(){
-
-document.getElementById("letter").style.display="block";
-
-}
-
-
-
-
-
-
-
-
-// GALERİ
-
-const gallery = document.getElementById("gallery");
-
-// pages klasöründeki ilk 20 fotoğraf (.jpeg)
-for (let i = 1; i <= 20; i++) {
-
-    let box = document.createElement("div");
-    box.className = "photo";
-
-    let img = document.createElement("img");
-    img.src = `pages/${i}.jpeg`;
-
-    img.onerror = function () {
-        box.remove();
-    };
-
-    box.appendChild(img);
-    gallery.appendChild(box);
-}
-
-// a klasöründeki 23 yeni fotoğraf (.jpeg)
-for (let i = 1; i <= 23; i++) {
-
-    let box = document.createElement("div");
-    box.className = "photo";
-
-    let img = document.createElement("img");
-    img.src = `a/${i}.jpeg`;
-
-    img.onerror = function () {
-        box.remove();
-    };
-
-    box.appendChild(img);
-    gallery.appendChild(box);
-}
-
-
-// MÜZİK
-
-
-const music=document.getElementById("loveMusic");
-
-const musicBtn=document.getElementById("musicBtn");
-
-
-let playing=false;
-
-
-
-function toggleMusic(){
-
-
-if(playing){
-
-music.pause();
-
-musicBtn.innerHTML="🎵 Müziği Başlat ❤️";
-
-
-}else{
-
-
-music.volume=.4;
-
-music.play();
-
-musicBtn.innerHTML="⏸ Müziği Durdur ❤️";
-
-
-}
-
-
-playing=!playing;
-
-
-}
-
-
-
-
-
-
-
-// KALPLER
-
-
-setInterval(()=>{
-
-
-let heart=document.createElement("div");
-
-
-heart.className="heart";
-
-heart.innerHTML="❤️";
-
-
-heart.style.left=Math.random()*100+"vw";
-
-
-heart.style.fontSize=
-Math.random()*25+10+"px";
-
-
-heart.style.animationDuration=
-Math.random()*5+3+"s";
-
-
-document.body.appendChild(heart);
-
-
-
-setTimeout(()=>{
-
-heart.remove();
-
-},8000);
-
-
-
-},500);
-
-
-
-
-
-
-
-// YILDIZLAR
-
-
-for(let i=0;i<80;i++){
-
-
-let star=document.createElement("div");
-
-
-star.className="star";
-
-
-star.style.left=Math.random()*100+"vw";
-
-star.style.top=Math.random()*100+"vh";
-
-
-document.body.appendChild(star);
-
-
-}
-
-
 
 </script>
+
+    
 
 
 </body>
 </html>
+
